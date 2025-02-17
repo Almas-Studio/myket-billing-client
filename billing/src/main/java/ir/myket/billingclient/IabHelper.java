@@ -451,7 +451,7 @@ public class IabHelper {
             }
 
             // if subscriptions are supported, then also query for subscriptions
-            if (iabConnection.mSubscriptionsSupported) {
+            if (subscriptionsSupported()) {
                 r = queryPurchases(inv, ITEM_TYPE_SUBS);
                 if (r != BILLING_RESPONSE_RESULT_OK) {
                     throw new IabException(r, "Error refreshing inventory (querying owned subscriptions).");
